@@ -1,0 +1,7 @@
+{
+  "name": "agildate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
