@@ -1,10 +1,13 @@
 # Agildate
 
+[![NPM](https://img.shields.io/npm/l/ionic)](https://github.com/LukasAlves2711/Agildate/blob/main/LICENSE)
+
+## About
+
 Agildate project for appointments
 
 This project is a prototype of a future scheduling application for barber shops and establishments that need agility and practicality at the touch of their hands.
 
-# Installation
 
 ## What is Ionic Framework?
 Ionic framework is an open-source UI toolkit for building performant, high-quality mobile apps, desktop apps, and progressive web apps using web technologies such as HTML, CSS, and JavaScript. It allows developers to build once and run everywhere. It was created by Max Lynch, Ben Sperry, and Adam Bradley of Drifty Co. in 2013. The first beta version of the Ionic framework was released in March 2014.
