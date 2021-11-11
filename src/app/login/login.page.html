@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <ion-button [routerLink]="['/tabs']">Sign in</ion-button>
+  <ion-label color="primary">Already have an account? </ion-label>
+  <ion-button [routerLink]="['/register']">Sign up</ion-button>
+ 
+</ion-content>
