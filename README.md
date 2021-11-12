@@ -9,7 +9,7 @@ Agildate project for appointments
 This project is a prototype of a future scheduling application for barber shops and establishments that need agility and practicality at the touch of their hands.
 
 
-Install the Ionic CLI
+## Install the Ionic CLI
 
 Before proceeding, make sure your computer has Node.js installed. See these instructions to set up an environment for Ionic.
 
