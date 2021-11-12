@@ -9,10 +9,47 @@ Agildate project for appointments
 This project is a prototype of a future scheduling application for barber shops and establishments that need agility and practicality at the touch of their hands.
 
 
-## What is Ionic Framework?
-Ionic framework is an open-source UI toolkit for building performant, high-quality mobile apps, desktop apps, and progressive web apps using web technologies such as HTML, CSS, and JavaScript. It allows developers to build once and run everywhere. It was created by Max Lynch, Ben Sperry, and Adam Bradley of Drifty Co. in 2013. The first beta version of the Ionic framework was released in March 2014.
+Install the Ionic CLI
 
-The Ionic framework mainly focuses on front-end user experience or UI interaction, which handles all the look and feel of your app. It is easy to learn and can integrate with other libraries or framework such as Angular, Cordova, etc. It can also be used as a standalone without a front-end framework using a simple script include.
+Before proceeding, make sure your computer has Node.js installed. See these instructions to set up an environment for Ionic.
+
+Install the Ionic CLI with npm:
+
+``` bash 
+npm install -g @ionic/cli
+``` 
+
+If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
+
+``` bash 
+npm uninstall -g ionic
+``` 
+``` bash 
+npm install -g @ionic/cli
+``` 
+
+The -g option means install globally. When packages are installed globally, EACCES permission errors can occur. Consider setting up npm to operate globally without elevated permissions. See Resolving Permission Errors for more information.
+
+Start an App
+Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the blank starter, tabs starter, and sidemenu starter. Get started with the ionic start command:
+``` bash 
+ionic start
+``` 
+
+start app thumbnails
+
+To learn more about starting Ionic apps, see the Starting Guide.
+
+Run the App
+
+The majority of Ionic app development can be spent right in the browser using the ionic serve command:
+
+``` bash 
+cd myApp
+``` 
+ionic serve
+There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the Running an App Guide.
+
 
 ### Using NVM
 
