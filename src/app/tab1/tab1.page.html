@@ -7,83 +7,63 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Barber Shop</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  
-<!-- <ion-img [src]="item.src"></ion-img> -->
-<ion-label color="dark">Profissionais</ion-label>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Barber Shop</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
-  <!-- List of Text Items -->
-<ion-list>
-  <ion-item>
-    <ion-label>Pokémon Yellow</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Mega Man X</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Super Mario World</ion-label>
-  </ion-item>
-</ion-list>
-  <!-- <ion-img [src]="item.src"></ion-img> -->
-  <ion-label color="dark">Serviços</ion-label>
+    <div>
+      <form novalidate [formGroup]="agendamentoForm" (ngSubmit)="Agendamento()">
+        <ion-label color="dark">Serviços</ion-label>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-label>
-        Selecione seus serviços
-      </ion-label>
-    </ion-list-header>
-  
-    <ion-item>
-      <ion-label>Opções</ion-label>
-      <ion-select multiple="true" cancelText="Cancelar" okText="Ok">
-        <ion-select-option value="Corte">Corte - 20 min</ion-select-option>
-        <ion-select-option value="Corte_Navalhado">Corte Navalhado - 30 min</ion-select-option>
-        <ion-select-option value="Corte_Pigmentado">Corte Pigmentado - 50 min</ion-select-option>
-        <ion-select-option value="Corte_Alisamento">Corte + Alisamento - 1 hora </ion-select-option>
-        <ion-select-option value="Corte_Luzes">Corte + Luzes - 1 hora</ion-select-option>
-        <ion-select-option value="Corte_Barba">Corte + Barba - 30 min</ion-select-option>
-        <ion-select-option value="Alisamento">Alisamento - 1 hora</ion-select-option>
-        <ion-select-option value="Luzes">Luzes - 1 hora</ion-select-option>
-        <ion-select-option value="Desenho">Desenho - 20 min</ion-select-option>
-        <ion-select-option value="Barba">Barba -10 min </ion-select-option>
-        <ion-select-option value="Barba_Pigmentada">Barba Pigmentada - 1 hora</ion-select-option>
-        <ion-select-option value="Pezinho">Sombrancelhas - 7 min</ion-select-option>
-        <ion-select-option value="Barba">Barba - 10 min </ion-select-option>
-      </ion-select>
-    </ion-item> 
-  </ion-list>
+        <ion-list>
+          <ion-list-header>
+            <ion-label>
+              Selecione seus serviços
+            </ion-label>
+          </ion-list-header>
+        
+          <ion-item>
+            <ion-label>Opções</ion-label>
+            <ion-select multiple="false" cancelText="Cancelar" okText="Ok" formControlName="services" (ionChange)="changeDate()">
+              <ion-select-option value="20">Corte - 20 min</ion-select-option>
+              <ion-select-option value="30">Corte Navalhado - 30 min</ion-select-option>
+              <ion-select-option value="50">Corte Pigmentado - 50 min</ion-select-option>
+              <ion-select-option value="60">Corte + Alisamento - 1 hora </ion-select-option>
+              <ion-select-option value="61">Corte + Luzes - 1,01 hora</ion-select-option>
+              <ion-select-option value="31">Corte + Barba - 31 min</ion-select-option>
+              <ion-select-option value="62">Alisamento - 1,02 hora</ion-select-option>
+              <ion-select-option value="63">Luzes - 1,03 hora</ion-select-option>
+              <ion-select-option value="21">Desenho - 21 min</ion-select-option>
+              <ion-select-option value="11">Barba -11 min </ion-select-option>
+              <ion-select-option value="64">Barba Pigmentada - 1,04 hora</ion-select-option>
+              <ion-select-option value="7">Sombrancelhas - 7 min</ion-select-option>
+              <ion-select-option value="12">Barba - 12 min </ion-select-option>
+            </ion-select>
+          </ion-item> 
+        </ion-list>
 
-  <ion-label color="dark">Agendamento</ion-label>
+        <ion-item>
+          <ion-label position="floating">Dias disponiveis</ion-label>
+          <ion-datetime displayFormat="DD/MMM/YYYY" formControlName="days" (ionChange)="changeDate()"></ion-datetime>
+        </ion-item>
 
-  <!-- List of Sliding Items -->
-<ion-list>
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>Dias</ion-label>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
+        <ion-label color="dark">Agendamento</ion-label>
 
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>Horarios</ion-label>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
-<ion-button >Confirmar</ion-button>
-<ion-button >Cancelar</ion-button>
+        <ion-list>
+          <ion-item *ngFor = "let h of horariosDisponiveis; " >
+            <ion-label>{{h}}</ion-label>
+          </ion-item>
+        </ion-list>
 
+      <ion-button type="Submit" [disable]="agendamentoForm.invalid">Confirmar</ion-button>
+      <ion-button >Cancelar</ion-button>
+
+    </form>
+  </div>   
+    
 </ion-content>
 
 
