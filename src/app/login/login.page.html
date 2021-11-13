@@ -1,21 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">E-mail</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-
-  <ion-button [routerLink]="['/tabs']">Sign in</ion-button>
-  <ion-label color="primary">Already have an account? </ion-label>
-  <ion-button [routerLink]="['/register']">Sign up</ion-button>
- 
+<div class="flex-center">
+<ion-header> 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>AgilDate</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-button size="full" color="sign" [routerLink]="['/tabs']">Sign in</ion-button>
+      <ion-label color="primary" class="flex-center">New around here? </ion-label> 
+      <ion-button color="dark" fill="clear" size="full" [routerLink]="['/register']">Register</ion-button>
+    </ion-card-content>
+  </ion-card>  
+</ion-header>
+</div>
 </ion-content>
+
