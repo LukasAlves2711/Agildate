@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateCallback } from '@firebase/util';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-tab1',
@@ -13,6 +14,7 @@ export class Tab1Page {
   horariosDisponiveis = [];
 
   constructor(
+    private afa: AngularFireAuth,
     public formbilder: FormBuilder
   ) {
     this.agendamentoForm = this.formbilder.group(
@@ -49,4 +51,8 @@ export class Tab1Page {
     console.log(this.agendamentoForm.value);
   }
 
+
+  logout(){
+    this.afa.signOut();
+  }
 }

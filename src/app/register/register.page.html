@@ -12,12 +12,12 @@
 
   <ion-item>
     <ion-label position="floating">Password</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="password" [(ngModel)]="userRegister.password"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">E-mail</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="email" [(ngModel)]="userRegister.email"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -29,7 +29,7 @@
 <ion-checkbox>Alow terms & Conditions</ion-checkbox>
 
 <!-- Sizes -->
-<ion-button [routerLink]="['/tabs']">Sign in</ion-button>
-
+<ion-button expand="block" color="primary" fill="clear"  (click)="pageInitial()">Já possuo conta</ion-button>
+<ion-button expand="block" color="primary" (click)="register()">Confirmar Cadastro</ion-button>
 
 </ion-content>

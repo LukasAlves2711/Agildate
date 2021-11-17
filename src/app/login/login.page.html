@@ -1,21 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">E-mail</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-
-  <ion-button [routerLink]="['/tabs']">Sign in</ion-button>
-  <ion-label color="primary">Already have an account? </ion-label>
-  <ion-button [routerLink]="['/register']">Sign up</ion-button>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Insira seu Email</ion-label>
+          <ion-input type="email" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Insira sua Senha</ion-label>
+          <ion-input type="Password" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+        <ion-button color="primary" expand="block" (click)="login()">Logar</ion-button>
+        <ion-button fill="clear" color="secondary" expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
  
 </ion-content>
