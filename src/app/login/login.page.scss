@@ -1,0 +1,21 @@
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ion-button[color="dark"]{
+    text-transform: initial;
+}
+
+ion-button[color="sign"]{
+    background: #bc74ff; 
+}
+
+
+ion-content{
+    --background: #6921ac;
+}
+
+
