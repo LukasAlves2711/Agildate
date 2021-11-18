@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateCallback } from '@firebase/util';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import { CrudService } from '../service/crud.service';
 
 @Component({
   selector: 'app-tab1',
@@ -15,13 +17,15 @@ export class Tab1Page {
 
   constructor(
     private afa: AngularFireAuth,
-    public formbilder: FormBuilder
+    public formbilder: FormBuilder,
+    private router: Router,
+    private crudService: CrudService
   ) {
     this.agendamentoForm = this.formbilder.group(
       {
-        services:[null, [Validators.required]],
-        days: [null, [Validators.required]],
-        hours: [null, [Validators.required]]
+        service:[null, [Validators.required]],
+        day: [new Date(), [Validators.required]],
+        hour: [null]
       }
     );
     this.changeDate();
@@ -42,13 +46,24 @@ export class Tab1Page {
 
   changeDate()
   {
-    const servico = parseInt(this.agendamentoForm.get('services').value); 
-    const data = this.agendamentoForm.get('days').value;
+    const servico = parseInt(this.agendamentoForm.get('service').value); 
+    const data = this.agendamentoForm.get('day').value;
     this.horariosDisponiveis = this.serieList(data,servico);
   }
 
   Agendamento(){
     console.log(this.agendamentoForm.value);
+    if (!this.agendamentoForm.valid) {
+      return false;
+    } else {
+      this.crudService.create(this.agendamentoForm.value)
+      .then(() => {
+        this.agendamentoForm.reset();
+        this.router.navigate(['/tabs/tab2']);
+      }).catch((err) => {
+        console.log(err)
+      });
+    }
   }
 
 

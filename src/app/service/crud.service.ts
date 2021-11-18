@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { Router } from "@angular/router";
 
-export class TODO {
-  $key: string;
-  title: string;
-  description: string;
+export class Agendamento {
+  $key?: string;
+  service: string;
+  day: string;
+  hour: string;
 }
 
 @Injectable({
@@ -17,32 +18,32 @@ export class CrudService {
 
   constructor(
     private ngFirestore: AngularFirestore,
-    private router: Router)
-     { }
+    private router: Router
+  ) { }
 
-     create(todo: TODO) {
-      return this.ngFirestore.collection('tasks').add(todo);
-    }
+  create(param: Agendamento) {
+    return this.ngFirestore.collection('agendamento').add(param);
+  }
 
-    getTasks() {
-      return this.ngFirestore.collection('tasks').snapshotChanges();
-    }
-    
-    getTask(id) {
-      return this.ngFirestore.collection('tasks').doc(id).valueChanges();
-    }
-  
-    update(id, todo: TODO) {
-      this.ngFirestore.collection('tasks').doc(id).update(todo)
-        .then(() => {
-          this.router.navigate(['/todo-list']);
-        }).catch(error => console.log(error));;
-    }
-  
-    delete(id: string) {
-      this.ngFirestore.doc('tasks/' + id).delete();
-    }
-  
+  getAgendamentos() {
+    return this.ngFirestore.collection('agendamento').snapshotChanges();
+  }
+
+  getAgendamento(id) {
+    return this.ngFirestore.collection('agendamento').doc(id).valueChanges();
+  }
+
+  update(id, param: Agendamento) {
+    this.ngFirestore.collection('agendamento').doc(id).update(param)
+      .then(() => {
+        this.router.navigate(['/tabs/tab2']);
+      }).catch(error => console.log(error));;
+  }
+
+  delete(id: string) {
+    this.ngFirestore.doc('agendamento/' + id).delete();
+  }
+
 
 }
 

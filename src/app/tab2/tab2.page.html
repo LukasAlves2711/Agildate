@@ -15,7 +15,13 @@
     </ion-header>
 
 
-    
+    <ion-list>
+      <ion-item *ngFor = "let h of agendamentos; " >
+        <ion-label>{{h.service}}</ion-label>
+        <ion-label>{{h.day}}</ion-label>
+        <ion-label>{{h.hour}}</ion-label>
+      </ion-item>
+    </ion-list>
 
 
 </ion-content>

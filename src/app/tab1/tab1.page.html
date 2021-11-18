@@ -32,7 +32,7 @@
         
           <ion-item>
             <ion-label>Opções</ion-label>
-            <ion-select multiple="false" cancelText="Cancelar" okText="Ok" formControlName="services" (ionChange)="changeDate()">
+            <ion-select multiple="false" cancelText="Cancelar" okText="Ok" formControlName="service" (ionChange)="changeDate()">
               <ion-select-option value="20">Corte - 20 min</ion-select-option>
               <ion-select-option value="30">Corte Navalhado - 30 min</ion-select-option>
               <ion-select-option value="50">Corte Pigmentado - 50 min</ion-select-option>
@@ -52,7 +52,7 @@
 
         <ion-item>
           <ion-label position="floating">Dias disponiveis</ion-label>
-          <ion-datetime displayFormat="DD/MMM/YYYY" formControlName="days" (ionChange)="changeDate()"></ion-datetime>
+          <ion-datetime displayFormat="DD/MMM/YYYY" formControlName="day" (ionChange)="changeDate()"></ion-datetime>
         </ion-item>
 
         <br>

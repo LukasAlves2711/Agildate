@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Agendamento, CrudService } from '../service/crud.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  agendamentos:Agendamento[]=[]
+  subscription
+  constructor(
+    private crudService: CrudService
+  ) {
+    this.crudService.getAgendamentos().subscribe((res) => {
+      this.agendamentos = res.map((t) => {
+        return {
+          id: t.payload.doc.id,
+          ...t.payload.doc.data() as Agendamento
+        };
+      })
+    });
+  }
 
 }
