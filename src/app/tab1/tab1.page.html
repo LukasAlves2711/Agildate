@@ -1,10 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Menu
+      Agendamento
     </ion-title>
   </ion-toolbar>
-  <ion-button class="end" color="danger" (click)="logout()">Logout</ion-button>
+  
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -17,12 +18,15 @@
 
     <div>
       <form novalidate [formGroup]="agendamentoForm" (ngSubmit)="Agendamento()">
-        <ion-label color="dark">Serviços</ion-label>
+
+        <br> 
+
+        <ion-label color="dark">Menu de Serviços</ion-label>
 
         <ion-list>
           <ion-list-header>
             <ion-label>
-              Selecione seus serviços
+              Selecione seus Serviços
             </ion-label>
           </ion-list-header>
         
@@ -51,7 +55,9 @@
           <ion-datetime displayFormat="DD/MMM/YYYY" formControlName="days" (ionChange)="changeDate()"></ion-datetime>
         </ion-item>
 
-        <ion-label color="dark">Agendamento</ion-label>
+        <br>
+
+        <ion-label color="dark">Horarios</ion-label>
 
         <ion-list>
           <ion-item *ngFor = "let h of horariosDisponiveis; " >
