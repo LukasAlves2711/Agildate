@@ -1,14 +1,14 @@
 <ion-content>
-<<<<<<< HEAD
   <div class="flex-center">
     <ion-card>
+      <ion-img style="width: 260px; height: 260px;"src="/assets/logo1.png"></ion-img>
       <ion-card-content>
         <ion-item>
-          <ion-label position="floating">Insira seu Email</ion-label>
+          <ion-label position="floating">Email</ion-label>
           <ion-input type="email" [(ngModel)]="userLogin.email"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Insira sua Senha</ion-label>
+          <ion-label position="floating">Senha</ion-label>
           <ion-input type="Password" [(ngModel)]="userLogin.password"></ion-input>
         </ion-item>
         <ion-button color="primary" expand="block" (click)="login()">Logar</ion-button>
@@ -16,31 +16,3 @@
       </ion-card-content>
     </ion-card>
   </div>
-  <ion-label>blablabla</ion-label>
-=======
-<div class="flex-center">
-<ion-header> 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>AgilDate</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-button size="full" color="sign" [routerLink]="['/tabs']">Sign in</ion-button>
-      <ion-label color="primary" class="flex-center">New around here? </ion-label> 
-      <ion-button color="dark" fill="clear" size="full" [routerLink]="['/register']">Register</ion-button>
-    </ion-card-content>
-  </ion-card>  
-</ion-header>
-</div>
->>>>>>> 21dcead5486397f22d9c80caa0f95b79669f2ab4
-</ion-content>
-
