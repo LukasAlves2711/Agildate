@@ -12,16 +12,21 @@
       <ion-title size="large">Historico</ion-title>
     </ion-toolbar>
 
-    </ion-header>
+  </ion-header>
 
-
+  <ion-card>
+    <ion-label color="dark">Meus Agendamentos</ion-label>
     <ion-list>
-      <ion-item *ngFor = "let h of agendamentos; " >
-        <ion-label>{{h.service}}</ion-label>
-        <ion-label>{{h.day}}</ion-label>
-        <ion-label>{{h.hour}}</ion-label>
+
+      <ion-item *ngFor="let h of agendamentos; ">
+        <oin-item-options side="end">
+          <ion-icon name="trash-outline" color="danger"></ion-icon>
+          <ion-label>{{h.service}}</ion-label>
+          <ion-label>{{h.day}}</ion-label>
+          <ion-label>{{h.hour}}</ion-label>
+        </oin-item-options>
       </ion-item>
     </ion-list>
-
+  </ion-card>
 
 </ion-content>

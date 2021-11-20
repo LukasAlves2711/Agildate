@@ -12,8 +12,23 @@ import { CrudService } from '../service/crud.service';
 })
 export class Tab1Page {
 
-  agendamentoForm : FormGroup;
+  agendamentoForm: FormGroup;
   horariosDisponiveis = [];
+  dict = {
+    20 : "Corte - 20 min",
+    30 : "Corte Navalhado - 30 min", 
+    50 : "Corte Pigmentado - 50 min",
+    60 : "Corte + Alisamento - 1 hora ",
+    61 : "Corte + Luzes - 1,01 hora",
+    31 : "Corte + Barba - 31 min",
+    62 : "Alisamento - 1,02 hora",
+    63 : "Luzes - 1,03 hora",
+    21 : "Desenho - 21 min",
+    11 : "Barba -11 min",
+    64 : "Barba Pigmentada - 1,04 hora",
+    7 : "Sombrancelhas - 7 min",
+    12 : "Barba - 12 min"
+  }
 
   constructor(
     private afa: AngularFireAuth,
@@ -23,51 +38,48 @@ export class Tab1Page {
   ) {
     this.agendamentoForm = this.formbilder.group(
       {
-        service:[null, [Validators.required]],
+        service: [null, [Validators.required]],
         day: [new Date(), [Validators.required]],
         hour: [null]
       }
     );
     this.changeDate();
-  }
   
-  serieList(data,minutos)
-  {
+    
+
+
+  }
+
+  serieList(data, minutos) {
     const dataatual = new Date(data);
-    const hour=[];
+    const hour = [];
     const dia = dataatual.getDate();
-    while (dataatual.getDate() === dia )
-    {
+    while (dataatual.getDate() === dia) {
       hour.push(dataatual.toLocaleString('pt-BR'));
       dataatual.setMinutes(dataatual.getMinutes() + minutos);
     }
     return hour;
   }
 
-  changeDate()
-  {
-    const servico = parseInt(this.agendamentoForm.get('service').value); 
+  changeDate() {
+    const servico = parseInt(this.agendamentoForm.get('service').value);
     const data = this.agendamentoForm.get('day').value;
-    this.horariosDisponiveis = this.serieList(data,servico);
+    this.horariosDisponiveis = this.serieList(data, servico);
   }
 
-  Agendamento(){
+  Agendamento() {
     console.log(this.agendamentoForm.value);
     if (!this.agendamentoForm.valid) {
       return false;
     } else {
       this.crudService.create(this.agendamentoForm.value)
-      .then(() => {
-        this.agendamentoForm.reset();
-        this.router.navigate(['/tabs/tab2']);
-      }).catch((err) => {
-        console.log(err)
-      });
+        .then(() => {
+          this.agendamentoForm.reset();
+          this.router.navigate(['/tabs/tab2']);
+        }).catch((err) => {
+          console.log(err)
+        });
     }
   }
 
-
-  logout(){
-    this.afa.signOut();
-  }
 }

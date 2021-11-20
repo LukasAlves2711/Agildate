@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Agendamento, CrudService } from '../service/crud.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -7,7 +9,7 @@ import { Agendamento, CrudService } from '../service/crud.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  agendamentos:Agendamento[]=[]
+  agendamentos: Agendamento[] = []
   subscription
   constructor(
     private crudService: CrudService
@@ -21,5 +23,12 @@ export class Tab2Page {
       })
     });
   }
+
+  /*agendamento_delete(id){
+    this.crudService.delete(this.agendamento_delete(id)).then(() =>{
+      console.log()
+    })
+  }*/
+  
 
 }

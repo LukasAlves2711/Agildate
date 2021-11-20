@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-       Perfil
+      Perfil
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,31 +12,27 @@
       <ion-title size="large">Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
 
-        <!-- List of Input Items -->
-        <ion-list>
-          <ion-item>
-            <ion-label>Nome</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Sobre Nome</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>E-mail</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Telefone</ion-label>
-            <ion-input></ion-input>
-          </ion-item>
-        
-        
-          
-          
-        </ion-list>
-    
+    <ion-label color="dark">
+      Dados do Usuario
+    </ion-label>
+    <!-- List of Input Items -->
+    <ion-list>
+      <ion-item>
+        <ion-label>Nome:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>E-mail:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefone:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 
   <ion-button class="end" color="danger" (click)="logout()">Logout</ion-button>
 </ion-content>
