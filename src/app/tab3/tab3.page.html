@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="purple">
     <ion-title>
-      Tab 3
+      Perfil
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,31 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-list-header color="purple">
+    <ion-label color="dark">
+      Dados do Usuario
+    </ion-label>
+    </ion-list-header>
+    <!-- List of Input Items -->
+    <ion-list>
+      <ion-item>
+        <ion-label>Nome:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>E-mail:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefone:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-button expand="block" class="end" color="danger" (click)="logout()">Logout</ion-button>
 </ion-content>

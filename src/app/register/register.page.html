@@ -6,12 +6,12 @@
 
 <ion-content>
   <ion-item>
-    <ion-label position="floating">User Name</ion-label>
+    <ion-label position="floating">Nome do Usuario</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Password</ion-label>
+    <ion-label position="floating">Senha</ion-label>
     <ion-input type="password" [(ngModel)]="userRegister.password"></ion-input>
   </ion-item>
 
@@ -26,10 +26,11 @@
   </ion-item>
 
   <!-- Default Checkbox -->
-<ion-checkbox>Alow terms & Conditions</ion-checkbox>
+  <ion-label>Alow terms & Conditions</ion-label>
+<ion-checkbox></ion-checkbox>
 
 <!-- Sizes -->
 <ion-button expand="block" color="primary" fill="clear"  (click)="pageInitial()">Já possuo conta</ion-button>
-<ion-button expand="block" color="primary" (click)="register()">Confirmar Cadastro</ion-button>
+<ion-button expand="block" color="primary" (click)="register()">Sign in</ion-button>
 
 </ion-content>
