@@ -2,10 +2,24 @@ ion-toolbar[color="purple"] {
     background: #9859d3;
 }
 
+ion-title {
+    text-align: center;
+    color: aliceblue;
+}
+
+ion-list {
+    background: #9859d3;
+}
+
 ion-list-header[color="purple"] {
     background: #563179;
 }
 
 ion-content {
-    --background: #000000;
+    --background: rgba(40, 42, 54, 1)
+}
+
+ion-label {
+    text-align: center;
+    color: aliceblue;
 }

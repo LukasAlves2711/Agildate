@@ -1,4 +1,4 @@
-.flex-center {
+.formulario {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,4 +19,9 @@ ion-button[color="cadastrar"] {
 
 ion-content {
     --background: #6921ac;
+}
+
+ion-label {
+    text-align: center;
+    color: aliceblue;
 }
