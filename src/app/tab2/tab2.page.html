@@ -1,36 +1,40 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="purple">
-    <ion-title>
-      Historico
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="purple">
+        <ion-title>
+            Historico
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Historico</ion-title>
-    </ion-toolbar>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Historico</ion-title>
+        </ion-toolbar>
 
-  </ion-header>
-  <ion-list-header color="purple">
-    <ion-label color="dark">
-      Meus agendamentos
-    </ion-label>
-  </ion-list-header>
-  <ion-card>
-    <ion-list>
-    
-
-      <ion-item *ngFor="let h of agendamentos; ">
-        <oin-item-options side="end">
-          <ion-icon name="trash-outline" color="danger"></ion-icon>
-          <ion-label>{{h.service}}</ion-label>
-          <ion-label>{{h.day}}</ion-label>
-          <ion-label>{{h.hour}}</ion-label>
-        </oin-item-options>
-      </ion-item>
-    </ion-list>
-  </ion-card>
+    </ion-header>
+    <ion-list-header color="purple">
+        <ion-label color="dark">
+            Meus agendamentos
+        </ion-label>
+    </ion-list-header>
+    <ion-card>
+        <ion-list>
+            <ion-item-sliding *ngFor="let h of agendamentos; ">
+                <ion-item>
+                    <div class="d-flex">
+                        <span>{{h.service | findServiceFromKey}}</span>
+                        <span>{{h.day}}</span>
+                        <span>{{h.hour}}</span>
+                    </div>
+                </ion-item>
+                <ion-item-options side="end">
+                    <ion-item-option (click)="agendamento_delete(h.id)">
+                        <ion-icon name="trash-outline" color="danger"></ion-icon>
+                    </ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </ion-card>
 
 </ion-content>

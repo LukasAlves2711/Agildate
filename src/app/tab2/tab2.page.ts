@@ -24,11 +24,12 @@ export class Tab2Page {
     });
   }
 
-  /*agendamento_delete(id){
-    this.crudService.delete(this.agendamento_delete(id)).then(() =>{
-      console.log()
-    })
-  }*/
+  agendamento_delete(id){
+    console.log('excluir id =>',id);
+    if(window.confirm("Tem certeza que deseja excluir?")){
+      this.crudService.delete(id);
+    }
+  }
   
 
 }

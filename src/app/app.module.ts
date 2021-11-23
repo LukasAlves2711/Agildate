@@ -21,21 +21,21 @@ import { environment } from 'src/environments/environment';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule, 
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
-    
+
   providers: [
     {
       provide: RouteReuseStrategy,
-      useClass: IonicRouteStrategy 
+      useClass: IonicRouteStrategy
     }
   ],
 
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

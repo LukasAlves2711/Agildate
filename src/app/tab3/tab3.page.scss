@@ -1,7 +1,11 @@
-ion-toolbar[color="purple"]{
+ion-toolbar[color="purple"] {
     background: #9859d3;
 }
-ion-list-header[color="purple"]{
-    background: #563179; 
+
+ion-list-header[color="purple"] {
+    background: #563179;
 }
 
+ion-content {
+    --background: #000000;
+}
