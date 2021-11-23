@@ -14,14 +14,30 @@ ion-button[color="purple"] {
 }
 
 ion-button[color="cadastrar"] {
-    color: aliceblue;
+    color: #6921ac;
 }
 
 ion-content {
-    --background: #6921ac;
+    --background: rgba(40, 42, 54, 1);
 }
 
 ion-label {
+    font-weight: bold;
     text-align: center;
     color: aliceblue;
+}
+
+ion-card {
+    background: rgba(40, 42, 54, 1);
+}
+
+ion-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.item-native::after {
+    color: #6921ac;
 }
