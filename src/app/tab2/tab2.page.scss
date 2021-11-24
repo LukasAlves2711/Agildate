@@ -11,6 +11,10 @@ ion-list {
     background: #9859d3;
 }
 
+ion-item [color="purple"] {
+    background: #563179;
+}
+
 ion-list-header[color="purple"] {
     background: #563179;
 }
@@ -29,5 +33,9 @@ ion-item-sliding {
 }
 
 span {
-    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    padding-top: 7px;
+    color: aliceblue;
 }
