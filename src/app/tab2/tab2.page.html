@@ -24,7 +24,7 @@
                 <ion-item color="purple">
                     <div class="d-flex">
                         <span>{{h.service | findServiceFromKey}}</span>
-                        <span>{{h.day}}</span>
+                        <span>{{h.day | date : 'dd/MM/yyyy' }}</span>
                         <span>{{h.hour}}</span>
                     </div>
                 </ion-item>

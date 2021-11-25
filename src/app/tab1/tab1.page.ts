@@ -55,7 +55,7 @@ export class Tab1Page {
     const hour = [];
     const dia = dataatual.getDate();
     while (dataatual.getDate() === dia) {
-      hour.push(dataatual.toLocaleString('pt-BR'));
+      hour.push(dataatual.toLocaleTimeString('pt-BR'));
       dataatual.setMinutes(dataatual.getMinutes() + minutos);
     }
     return hour;
