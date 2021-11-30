@@ -66,8 +66,12 @@
                 </ion-list-header>
                 <ion-list>
 
-                    <ion-item *ngFor="let h of horariosDisponiveis;">
-                        <ion-label>{{h}}</ion-label>
+                    <ion-item>
+                        <ion-label>Opções</ion-label>
+                        <ion-select multiple="false" cancelText="Cancelar" okText="Ok" formControlName="hour">
+                            <ion-select-option *ngFor="let h of horariosDisponiveis;" value="{{h}}">{{h}}</ion-select-option>
+                        </ion-select>
+                        <!-- <ion-label>{{h}}</ion-label> -->
                     </ion-item>
                 </ion-list>
             </ion-card>

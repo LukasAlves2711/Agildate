@@ -14,21 +14,7 @@ export class Tab1Page {
 
   agendamentoForm: FormGroup;
   horariosDisponiveis = [];
-  dict = {
-    20 : "Corte - 20 min",
-    30 : "Corte Navalhado - 30 min", 
-    50 : "Corte Pigmentado - 50 min",
-    60 : "Corte + Alisamento - 1 hora ",
-    61 : "Corte + Luzes - 1,01 hora",
-    31 : "Corte + Barba - 31 min",
-    62 : "Alisamento - 1,02 hora",
-    63 : "Luzes - 1,03 hora",
-    21 : "Desenho - 21 min",
-    11 : "Barba -11 min",
-    64 : "Barba Pigmentada - 1,04 hora",
-    7 : "Sombrancelhas - 7 min",
-    12 : "Barba - 12 min"
-  }
+
 
   constructor(
     private afa: AngularFireAuth,
@@ -40,12 +26,12 @@ export class Tab1Page {
       {
         service: [null, [Validators.required]],
         day: [new Date(), [Validators.required]],
-        hour: [null]
+        hour: [null, [Validators.required]]
       }
     );
     this.changeDate();
-  
-    
+
+
 
 
   }
@@ -54,16 +40,20 @@ export class Tab1Page {
     const dataatual = new Date(data);
     const hour = [];
     const dia = dataatual.getDate();
+
     while (dataatual.getDate() === dia) {
       hour.push(dataatual.toLocaleTimeString('pt-BR'));
+
       dataatual.setMinutes(dataatual.getMinutes() + minutos);
     }
     return hour;
   }
 
+
   changeDate() {
     const servico = parseInt(this.agendamentoForm.get('service').value);
     const data = this.agendamentoForm.get('day').value;
+
     this.horariosDisponiveis = this.serieList(data, servico);
   }
 
