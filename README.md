@@ -12,7 +12,7 @@ Table of contents
    * [About](#About-Agildate-app)
    * [Table of contents](#Table-of-contents)
    * [Install](#install)
-   * [Technologies](#Technologies)
+   * [Technologies](#technologies)
 <!--te-->
 
 <h4 align="center"> 
@@ -30,7 +30,7 @@ Table of contents
 ### Install
 
 Before starting, you will need to have the following tools installed on your machine:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+[Git](https://git-scm.com)
 Also it's nice to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
 
 ### How to Installing Ionic
