@@ -9,10 +9,10 @@
 Table of contents
 =================
 <!--ts-->
-   * [About](#About)
+   * [About](#About-Agildate-app)
    * [Table of contents](#Table-of-contents)
    * [Install](#install)
-   * [Technologies](#technologies)
+   * [Technologies](#Technologies)
 <!--te-->
 
 <h4 align="center"> 
