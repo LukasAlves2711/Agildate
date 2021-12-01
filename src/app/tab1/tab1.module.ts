@@ -15,7 +15,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     ReactiveFormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    ReactiveFormsModule
   ],
   declarations: [Tab1Page]
 })

@@ -8,30 +8,27 @@
     <div class="formulario">
         <ion-card>
             <ion-item>
-                <ion-label position="floating">Nome do Usuario</ion-label>
-                <ion-input></ion-input>
+                <ion-label position="fixed">E-mail: </ion-label>
+                <ion-input type="e-mail" [(ngModel)]="userRegister.email"></ion-input>
             </ion-item>
-
             <ion-item>
-                <ion-label position="floating">Senha</ion-label>
+                <ion-label position="fixed">Senha: </ion-label>
                 <ion-input type="password" [(ngModel)]="userRegister.password"></ion-input>
             </ion-item>
 
-            <ion-item>
-                <ion-label position="floating">E-mail</ion-label>
-                <ion-input type="e-mail" [(ngModel)]="userRegister.email"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label position="floating">Telefone</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
+            <form novalidate [formGroup]="DadosForm">
+                <ion-item>
+                    <ion-label position="fixed">Usuário: </ion-label>
+                    <ion-input formControlName="name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="fixed">Telefone: </ion-label>
+                    <ion-input formControlName="tel"></ion-input>
+                </ion-item>
+            </form>
         </ion-card>
-
-
         <!-- Sizes -->
         <ion-button expand="block" color="purple" (click)="pageInitial()">Pagina Inicial</ion-button>
         <ion-button expand="block" color="purple" (click)="register()">Registrar</ion-button>
     </div>
-
 </ion-content>

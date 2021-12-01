@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { validateCallback } from '@firebase/util';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { CrudService } from '../service/crud.service';
+import { AgendamentoCrudService } from '../service/agendamento-crud.service';
 
 @Component({
   selector: 'app-tab1',
@@ -20,7 +19,7 @@ export class Tab1Page {
     private afa: AngularFireAuth,
     public formbilder: FormBuilder,
     private router: Router,
-    private crudService: CrudService
+    private agendamentoCrudService: AgendamentoCrudService
   ) {
     this.agendamentoForm = this.formbilder.group(
       {
@@ -62,7 +61,7 @@ export class Tab1Page {
     if (!this.agendamentoForm.valid) {
       return false;
     } else {
-      this.crudService.create(this.agendamentoForm.value)
+      this.agendamentoCrudService.create(this.agendamentoForm.value)
         .then(() => {
           this.agendamentoForm.reset();
           this.router.navigate(['/tabs/tab2']);

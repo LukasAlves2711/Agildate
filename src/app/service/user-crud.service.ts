@@ -2,44 +2,46 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { Router } from "@angular/router";
 
-export class Agendamento {
+export class Usuario {
   $key?: string;
-  service: string;
-  day: string;
-  hour: string;
+  userId: string;
+  name: string;
+  tel: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
+
+
+export class UserCrudService {
 
   constructor(
     private ngFirestore: AngularFirestore,
     private router: Router
   ) { }
 
-  create(param: Agendamento) {
-    return this.ngFirestore.collection('agendamento').add(param);
+  create(param: Usuario) {
+    return this.ngFirestore.collection('dados').add(param);
   }
 
   getAgendamentos() {
-    return this.ngFirestore.collection('agendamento').snapshotChanges();
+    return this.ngFirestore.collection('dados').snapshotChanges();
   }
 
   getAgendamento(id) {
-    return this.ngFirestore.collection('agendamento').doc(id).valueChanges();
+    return this.ngFirestore.collection('dados').doc(id).valueChanges();
   }
 
-  update(id, param: Agendamento) {
-    this.ngFirestore.collection('agendamento').doc(id).update(param)
+  update(id, param: Usuario) {
+    this.ngFirestore.collection('dados').doc(id).update(param)
       .then(() => {
         this.router.navigate(['/tabs/tab2']);
       }).catch(error => console.log(error));;
   }
 
   delete(id: string) {
-    this.ngFirestore.doc('agendamento/' + id).delete();
+    this.ngFirestore.doc('dados/' + id).delete();
   }
 
 

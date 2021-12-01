@@ -5,16 +5,8 @@
     height: 100%;
 }
 
-ion-button[color="dark"] {
-    text-transform: initial;
-}
-
 ion-button[color="purple"] {
     background: #bc74ff;
-}
-
-ion-button[color="cadastrar"] {
-    color: #6921ac;
 }
 
 ion-content {
@@ -40,4 +32,24 @@ ion-img {
 
 .item-native::after {
     color: #6921ac;
+}
+
+ion-item {
+    border-radius: 9px;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 5 px;
+    width: auto;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+input {
+    border-radius: 10px;
+    margin: 20px;
+}
+
+ion-button {
+    border-radius: 10px;
+    margin: 20px;
 }

@@ -15,22 +15,7 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
-  /*
-  {
-    path: 'update-todo/:id',
-    loadChildren: () => import('./update-todo/update-todo.module').then( m => m.UpdateTodoPageModule)
-  },
-  {
-    path: 'create-task',
-    loadChildren: () => import('./create-todo/create-todo.module').then( m => m.CreateTodoPageModule)
-  },
-  {
-    path: 'todo-list',
-    loadChildren: () => import('./todo-list/todo-list.module').then( m => m.TodoListPageModule)
-  },*/
-
- 
+  }, 
 ];
 @NgModule({
   imports: [

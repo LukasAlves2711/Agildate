@@ -12,7 +12,9 @@ export class Agendamento {
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
+
+
+export class AgendamentoCrudService {
 
   constructor(
     private ngFirestore: AngularFirestore,

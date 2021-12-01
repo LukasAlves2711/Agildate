@@ -1,3 +1,7 @@
+.formulario {
+    margin-top: 50px;
+}
+
 ion-toolbar[color="purple"] {
     background: #9859d3;
 }
@@ -7,25 +11,33 @@ ion-title {
     color: aliceblue;
 }
 
-ion-button[color="dark"] {
-    text-transform: initial;
-}
-
 ion-button[color="purple"] {
     background: #bc74ff;
-}
-
-ion-button[color="cadastrar"] {
-    color: #6921ac;
+    border-radius: 10px;
+    margin: 20px;
 }
 
 ion-content {
     --background: rgba(40, 42, 54, 1);
 }
 
+ion-item {
+    border-radius: 9px;
+    padding: 5 px;
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
 ion-label {
+    font-weight: bold;
     text-align: center;
     color: aliceblue;
+}
+
+input {
+    border-radius: 10px;
+    margin: 20px;
 }
 
 ion-button {

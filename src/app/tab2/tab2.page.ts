@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Agendamento, CrudService } from '../service/crud.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { Agendamento } from '../service/agendamento-crud.service';
+import { AgendamentoCrudService } from '../service/agendamento-crud.service';
 
 @Component({
   selector: 'app-tab2',
@@ -12,9 +11,9 @@ export class Tab2Page {
   agendamentos: Agendamento[] = []
   subscription
   constructor(
-    private crudService: CrudService
+    private agendamentoCrudService: AgendamentoCrudService
   ) {
-    this.crudService.getAgendamentos().subscribe((res) => {
+    this.agendamentoCrudService.getAgendamentos().subscribe((res) => {
       this.agendamentos = res.map((t) => {
         return {
           id: t.payload.doc.id,
@@ -27,7 +26,7 @@ export class Tab2Page {
   agendamento_delete(id){
     console.log('excluir id =>',id);
     if(window.confirm("Tem certeza que deseja excluir?")){
-      this.crudService.delete(id);
+      this.agendamentoCrudService.delete(id);
     }
   }
   
