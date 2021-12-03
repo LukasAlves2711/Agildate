@@ -25,6 +25,7 @@ Table of contents
 - [x] Login 
 - [x] Logout
 - [x] Scheduling
+- [x] Historic
 - [ ] User profile
 
 ### Install
@@ -50,11 +51,11 @@ In this project the Node v14.0.0 version is recommended as default
 $ git clone <git@github.com:LukasAlves2711/Agildate.git>
 
 # Access the project folder in the terminal/cmd
-$cd Agildate
+$ cd Agildate
 
 
 # Install dependencies
-$npm install
+$ npm install
 
 # Run the application in development mode
 $ ionic serve
